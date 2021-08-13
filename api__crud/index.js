@@ -6,6 +6,7 @@ const server = express();
 
 server.use(express.json());
 
+// dado fixo
 const cursos = ['NodeJS', 'HTML, CSS, JS', 'Java']
 
 
@@ -32,7 +33,7 @@ server.post('/cursos', (req, res) => {
     return res.json(cursos)
 })
 
-//Atualizar um  curso
+//Atualizar um curso
 
 server.put('/cursos/:index', (req, res) => {
     const {index} = req.params
@@ -43,7 +44,7 @@ server.put('/cursos/:index', (req, res) => {
     return res.json(cursos)
 })
 
-// excluir um cuurso
+// excluir um curso
 
 server.delete('/cursos/:index', (req, res) => {
     const {index} = req.params
