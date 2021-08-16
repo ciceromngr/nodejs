@@ -2,13 +2,10 @@ const express = require('express');
 
 const server = express();
 
-
-
 server.use(express.json());
 
 // dado fixo
 const cursos = ['NodeJS', 'HTML, CSS, JS', 'Java']
-
 
 // Retorna um curso
 server.get('/cursos/:index', (req, res) => {
@@ -22,7 +19,6 @@ server.get('/cursos/:index', (req, res) => {
 server.get('/cursos', (req, res) => {
     return res.json(cursos)
 })
-
 
 // Criar um novo curso
 
