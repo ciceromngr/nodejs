@@ -1,15 +1,24 @@
-const express = require('express')
-const cors = require('cors')
-const queries = require('./repository/queries')
+(async () => {
+    const express = require('express')
+    const cors = require('cors')
+    const queries = require('./repository/queries')
 
-const app = express()
+    const app = express()
 
-app.use(cors())
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+    // Criacao das tabelas 
+    const sqlize = require('./database/db')
+    const Usuario = require('./database/criar_table')
 
-app.get('/users', queries.getAllUsers)
+    await sqlize.sequelize.sync()
 
-app.listen(8000, () => {
+    app.use(cors())
+    app.use(express.json())
+    app.use(express.urlencoded({ extended: true }))
+
+    app.get('/users', queries.getAllUsers)
+    app.post('/users', queries.createUser)
+
+    app.listen(8000, () => {
     console.log('Server is Running')
 })
+})()
