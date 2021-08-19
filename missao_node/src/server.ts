@@ -1,7 +1,8 @@
+import "reflect-metadata"
 import express from 'express'
-
+import './database'
 const app = express()
 
-// aula 1:05:56
+const PORT = 8080
 
-app.listen(8080, () => console.log('Server is Running!'))
+app.listen(PORT, () => console.log('Server is Running!'))

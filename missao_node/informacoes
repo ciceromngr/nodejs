@@ -1,0 +1,12 @@
+
+/* 
+    Tipos de Parametros
+    Routes params => http://localhost:8080/produtos/469496465415
+    Query params => http://localhost:8080/produtos?name=teclado&descricao=telcadobom
+    Body params => {
+        "nome": "tecaldo",
+        "descricao": "teclado Bom"
+    }
+*/
+// Request ==> Entrando
+// Response ==> Saindo
