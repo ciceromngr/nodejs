@@ -11,7 +11,7 @@ app.use(express.json())
 
 app.use(router)
 
-// Tratativa de Error 
+// Tratativa de Errors
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 
     if (err instanceof Error) return res.status(400).json({ error: err.message })
