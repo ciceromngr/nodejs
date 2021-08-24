@@ -6,12 +6,14 @@ import 'express-async-errors'
 import { router } from "./routes"
 
 const PORT = 8080
+
 const app = express()
+
 app.use(express.json())
 
 app.use(router)
 
-// Tratativa de Errors
+// Middlewares para Tratativa de Errors 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 
     if (err instanceof Error) return res.status(400).json({ error: err.message })

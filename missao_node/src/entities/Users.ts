@@ -1,4 +1,4 @@
-import {Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn} from "typeorm";
+import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuid } from 'uuid'
 
 @Entity("users")
@@ -23,9 +23,7 @@ class Users {
     updated_at: Date
 
     constructor() {
-        if(!this.id) {
-            this.id = uuid() 
-        }
+        if (!this.id) this.id = uuid()
     }
 }
 
