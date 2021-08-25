@@ -10,7 +10,7 @@ export function ensureAdmin(req: Request, res: Response, next: NextFunction) {
 
     if (admin) return next()
 
-    return response.status(401).json({
+    return res.status(401).json({
         error: " User is not Unauthorized "
     })
 }
