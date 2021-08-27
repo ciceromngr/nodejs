@@ -12,7 +12,7 @@ interface IUserRequest {
 
 class CreateUsersService {
 
-    async execute({ name, email, password, admin }: IUserRequest) {
+    async execute({ name, email, password, admin = false }: IUserRequest) {
         const userRepository = getCustomRepository(UsersRepositories)
 
         if (!email) throw new Error("Email is empty")
